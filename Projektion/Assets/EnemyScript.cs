@@ -31,7 +31,7 @@ public class EnemyScript : MonoBehaviour
 
     private void Arrive()
     {
-        if (Vector3.Distance(transform.transform.position, startPoint.position) > distance)
+        if (Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(endPoint.transform.position.x, endPoint.transform.position.z)) < 0.5)
         {
             var temp = startPoint;
             startPoint = endPoint;
