@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-
     PlayerControls playerControls;
     PlayerLocomotion playerLocomotion;
+
+    public Camera mainCamera;
 
     public Vector2 movementInput;
     public Vector2 cameraInput;
@@ -15,6 +16,7 @@ public class InputManager : MonoBehaviour
     public float horizontalInput;
 
     public bool isJumping;
+
 
     private void Awake()
     {
@@ -30,7 +32,11 @@ public class InputManager : MonoBehaviour
             playerControls.PlayerMovement.Movement.performed += i => movementInput = i.ReadValue<Vector2>();
 
             playerControls.PlayerActions.Jumping.performed += i => isJumping = true;
-           
+
+            playerControls.PlayerActions.SwitchCameraX.performed += i => mainCamera.GetComponent<CameraManager>().SwitchCamera("x");
+            playerControls.PlayerActions.SwitchCameraY.performed += i => mainCamera.GetComponent<CameraManager>().SwitchCamera("y");
+            playerControls.PlayerActions.SwitchCameraZ.performed += i => mainCamera.GetComponent<CameraManager>().SwitchCamera("z");
+
         }
 
         playerControls.Enable();

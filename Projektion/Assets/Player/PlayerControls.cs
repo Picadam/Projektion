@@ -162,6 +162,33 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwitchCameraX"",
+                    ""type"": ""Button"",
+                    ""id"": ""12feaf39-e587-4a6a-b994-f11679779e56"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwitchCameraY"",
+                    ""type"": ""Button"",
+                    ""id"": ""5491a860-4996-41e7-a164-b168d49e177f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwitchCameraZ"",
+                    ""type"": ""Button"",
+                    ""id"": ""c9946909-4cdb-41a4-be4c-095878f08b4d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -186,6 +213,72 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Jumping"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""32201097-59a6-4cf6-8fc6-a5f4d8a9fb81"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchCameraX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2ec1b59f-5bc9-439f-be45-e135e67ba6b1"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchCameraX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1b9e3d78-71c1-4fae-b38e-4526bf5a147d"",
+                    ""path"": ""<Keyboard>/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchCameraY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""490b2b93-5225-4d60-8c6a-40145346b6a2"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchCameraY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fb416c6a-9e9f-40bc-b8f0-e805beb2d55d"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchCameraZ"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4161048a-1192-4394-9201-4b35cd6ec510"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchCameraZ"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -198,6 +291,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         // PlayerActions
         m_PlayerActions = asset.FindActionMap("PlayerActions", throwIfNotFound: true);
         m_PlayerActions_Jumping = m_PlayerActions.FindAction("Jumping", throwIfNotFound: true);
+        m_PlayerActions_SwitchCameraX = m_PlayerActions.FindAction("SwitchCameraX", throwIfNotFound: true);
+        m_PlayerActions_SwitchCameraY = m_PlayerActions.FindAction("SwitchCameraY", throwIfNotFound: true);
+        m_PlayerActions_SwitchCameraZ = m_PlayerActions.FindAction("SwitchCameraZ", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -291,11 +387,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_PlayerActions;
     private IPlayerActionsActions m_PlayerActionsActionsCallbackInterface;
     private readonly InputAction m_PlayerActions_Jumping;
+    private readonly InputAction m_PlayerActions_SwitchCameraX;
+    private readonly InputAction m_PlayerActions_SwitchCameraY;
+    private readonly InputAction m_PlayerActions_SwitchCameraZ;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
         public PlayerActionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Jumping => m_Wrapper.m_PlayerActions_Jumping;
+        public InputAction @SwitchCameraX => m_Wrapper.m_PlayerActions_SwitchCameraX;
+        public InputAction @SwitchCameraY => m_Wrapper.m_PlayerActions_SwitchCameraY;
+        public InputAction @SwitchCameraZ => m_Wrapper.m_PlayerActions_SwitchCameraZ;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -308,6 +410,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Jumping.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnJumping;
                 @Jumping.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnJumping;
                 @Jumping.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnJumping;
+                @SwitchCameraX.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSwitchCameraX;
+                @SwitchCameraX.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSwitchCameraX;
+                @SwitchCameraX.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSwitchCameraX;
+                @SwitchCameraY.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSwitchCameraY;
+                @SwitchCameraY.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSwitchCameraY;
+                @SwitchCameraY.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSwitchCameraY;
+                @SwitchCameraZ.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSwitchCameraZ;
+                @SwitchCameraZ.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSwitchCameraZ;
+                @SwitchCameraZ.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSwitchCameraZ;
             }
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -315,6 +426,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Jumping.started += instance.OnJumping;
                 @Jumping.performed += instance.OnJumping;
                 @Jumping.canceled += instance.OnJumping;
+                @SwitchCameraX.started += instance.OnSwitchCameraX;
+                @SwitchCameraX.performed += instance.OnSwitchCameraX;
+                @SwitchCameraX.canceled += instance.OnSwitchCameraX;
+                @SwitchCameraY.started += instance.OnSwitchCameraY;
+                @SwitchCameraY.performed += instance.OnSwitchCameraY;
+                @SwitchCameraY.canceled += instance.OnSwitchCameraY;
+                @SwitchCameraZ.started += instance.OnSwitchCameraZ;
+                @SwitchCameraZ.performed += instance.OnSwitchCameraZ;
+                @SwitchCameraZ.canceled += instance.OnSwitchCameraZ;
             }
         }
     }
@@ -326,5 +446,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     public interface IPlayerActionsActions
     {
         void OnJumping(InputAction.CallbackContext context);
+        void OnSwitchCameraX(InputAction.CallbackContext context);
+        void OnSwitchCameraY(InputAction.CallbackContext context);
+        void OnSwitchCameraZ(InputAction.CallbackContext context);
     }
 }
