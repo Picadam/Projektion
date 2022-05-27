@@ -5,25 +5,16 @@ using UnityEngine;
 public class AnimatorManager : MonoBehaviour
 {
     public Animator playerAnimator;
-    private InputManager inputManager;
 
 
     private void Awake()
     {
         playerAnimator = GetComponent<Animator>();
-        inputManager = GetComponent<InputManager>();
     }
 
     private void Update()
     {
-        if(inputManager.verticalInput != 0 || inputManager.horizontalInput != 0)
-        {
-            playerAnimator.SetBool("isRunning", true);
-        }
-        else
-        {
-            playerAnimator.SetBool("isRunning", false);
-        }
+
     }
 
     public void PlayTargetAnimation(string animationName)

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerLocomotion : MonoBehaviour
 {
+    private Vector3 direction;
+    private bool canJump = true;
+
     Transform cameraGameObject;
 
     Rigidbody playerRigidbody;
@@ -17,9 +20,8 @@ public class PlayerLocomotion : MonoBehaviour
     public float playerRotationSpeed = 10;
 
     public float jumpHeight = 3;
-    public float gravityIntensity = -15;
+    public float gravityIntensity = -30;
 
-    public float gravity = 5f;
     public float fallingSpeed;
     public float fallingVelocity;
 
@@ -42,7 +44,6 @@ public class PlayerLocomotion : MonoBehaviour
     public void PlayerActions()
     {
         PlayerMovement();
-        PlayerRotation();
         PlayerFallingLanding();
     }
     private void PlayerMovement()
@@ -51,45 +52,31 @@ public class PlayerLocomotion : MonoBehaviour
         {
             return;
         }
-        Vector3 xDir = cameraGameObject.right * inputManager.horizontalInput;
-        Vector3 yDir = cameraGameObject.up * inputManager.verticalInput;
 
-        if (cameraGameObject.up == new Vector3(0, 1, 0))
+        int canGoUpDown = 1;
+        canJump = false;
+        if (cameraGameObject.up.y > 0.2f)
         {
-            yDir = Vector3.zero;
+            canJump = true;
+            canGoUpDown = 0;
         }
 
-        Vector3 direction = xDir + yDir;
+        direction = cameraGameObject.right * inputManager.horizontalInput + canGoUpDown * inputManager.verticalInput * cameraGameObject.up;
         direction.Normalize();
         direction *= playerSpeed;
 
-        Vector3 movementVelocity = direction;
-        playerRigidbody.velocity = movementVelocity;
+        playerRigidbody.velocity = direction;
 
+        if (direction != Vector3.zero)
+        {
+            Quaternion rotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, playerRotationSpeed * Time.deltaTime);
+            animatorManager.playerAnimator.SetBool("isRunning", true);
+        }
+        else
+            animatorManager.playerAnimator.SetBool("isRunning", false);
     }
 
-    private void PlayerRotation()
-    {
-        if(isJumping)
-        {
-            return;
-        }
-        Vector3 xDir = cameraGameObject.right * inputManager.horizontalInput;
-        Vector3 yDir = cameraGameObject.up * inputManager.verticalInput;
-
-        if (cameraGameObject.up == new Vector3(0, 1, 0))
-        {
-            yDir = Vector3.zero;
-        }
-
-        Vector3 direction = xDir + yDir;
-        direction.Normalize();
-
-        Quaternion rotation = Quaternion.LookRotation(direction);
-        Quaternion playerRotation = Quaternion.Slerp(transform.rotation, rotation, playerRotationSpeed * Time.deltaTime);
-
-        transform.rotation = playerRotation;
-    }
     private void PlayerFallingLanding()
     {
         RaycastHit hit;
@@ -119,13 +106,11 @@ public class PlayerLocomotion : MonoBehaviour
         {
             isGrounded = false;
         }
-
-        
     }
 
     public void PlayerJumping()
     {
-        if(isGrounded)
+        if(isGrounded && canJump)
         {
             animatorManager.playerAnimator.SetBool("isJumping", true);
             animatorManager.PlayTargetAnimation("Jump");

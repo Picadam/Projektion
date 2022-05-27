@@ -933,13 +933,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   playerSpeed: 5
   playerRotationSpeed: 10
   jumpHeight: 10
-  gravity: 5
-  fallingSpeed: 0
-  fallingVelocity: 0
+  gravityIntensity: -30
+  fallingSpeed: 1000
+  fallingVelocity: 10
   rayCastHeightOffset: 0.5
   inAirTimer: 0
   isJumping: 0
@@ -968,6 +968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b0c566ebd76f1f478dde5b9ad030aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 0}
 --- !u!1 &3614968742547983324
 GameObject:
   m_ObjectHideFlags: 0
