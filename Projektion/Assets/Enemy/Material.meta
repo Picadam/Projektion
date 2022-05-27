@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Projektion/Assets/Materials/Default2.mat.meta
+guid: b69c5b46398d2d94ca4b6bc4a91aa9c7
+NativeFormatImporter:
+========
+guid: 53bbacdba644d034da41e354060c73ae
+folderAsset: yes
+DefaultImporter:
+>>>>>>>> origin/enemy:Projektion/Assets/Enemy/Material.meta
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

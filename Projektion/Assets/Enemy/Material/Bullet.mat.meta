@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Projektion/Assets/Materials/Default.mat.meta
+guid: 003a2c6f7d8c69e448cf33b37ac0cd85
+========
+guid: 3f7e5c05573bb4f41b7cf84de06297ae
+>>>>>>>> origin/enemy:Projektion/Assets/Enemy/Material/Bullet.mat.meta
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
