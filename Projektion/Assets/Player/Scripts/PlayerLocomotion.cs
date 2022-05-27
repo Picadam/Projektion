@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerLocomotion : MonoBehaviour
 {
-
-    Vector3 direction;
     Transform cameraGameObject;
 
     Rigidbody playerRigidbody;
@@ -53,12 +51,17 @@ public class PlayerLocomotion : MonoBehaviour
         {
             return;
         }
+        Vector3 xDir = cameraGameObject.right * inputManager.horizontalInput;
+        Vector3 yDir = cameraGameObject.up * inputManager.verticalInput;
 
-        direction = cameraGameObject.forward * inputManager.verticalInput;
-        direction = direction + cameraGameObject.right * inputManager.horizontalInput;
+        if (cameraGameObject.up == new Vector3(0, 1, 0))
+        {
+            yDir = Vector3.zero;
+        }
+
+        Vector3 direction = xDir + yDir;
         direction.Normalize();
-        direction.y = 0;
-        direction = direction * playerSpeed;
+        direction *= playerSpeed;
 
         Vector3 movementVelocity = direction;
         playerRigidbody.velocity = movementVelocity;
@@ -67,23 +70,20 @@ public class PlayerLocomotion : MonoBehaviour
 
     private void PlayerRotation()
     {
-
         if(isJumping)
         {
             return;
         }
+        Vector3 xDir = cameraGameObject.right * inputManager.horizontalInput;
+        Vector3 yDir = cameraGameObject.up * inputManager.verticalInput;
 
-        Vector3 direction = Vector3.zero;
-
-        direction = cameraGameObject.forward * inputManager.verticalInput;
-        direction = direction + cameraGameObject.right * inputManager.horizontalInput;
-        direction.Normalize();
-        direction.y = 0;
-
-        if(direction == Vector3.zero)
+        if (cameraGameObject.up == new Vector3(0, 1, 0))
         {
-            direction = transform.forward;
+            yDir = Vector3.zero;
         }
+
+        Vector3 direction = xDir + yDir;
+        direction.Normalize();
 
         Quaternion rotation = Quaternion.LookRotation(direction);
         Quaternion playerRotation = Quaternion.Slerp(transform.rotation, rotation, playerRotationSpeed * Time.deltaTime);
@@ -94,15 +94,15 @@ public class PlayerLocomotion : MonoBehaviour
     {
         RaycastHit hit;
         Vector3 rayCastOrigin = transform.position;
-        rayCastOrigin.y = rayCastOrigin.y + rayCastHeightOffset;
+        rayCastOrigin.y += rayCastHeightOffset;
 
         if(!isGrounded && !isJumping)
         {
             animatorManager.PlayTargetAnimation("Falling");
 
-            inAirTimer = inAirTimer + Time.deltaTime;
+            inAirTimer += Time.deltaTime;
             playerRigidbody.AddForce(transform.forward * fallingVelocity);
-            playerRigidbody.AddForce(-Vector3.up * fallingSpeed * inAirTimer);
+            playerRigidbody.AddForce(fallingSpeed * inAirTimer * -Vector3.up);
         }
 
         if(Physics.SphereCast(rayCastOrigin, 0.0000000000001f, -Vector3.up, out hit, groundLayer))
