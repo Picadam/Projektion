@@ -25,4 +25,9 @@ public class AnimatorManager : MonoBehaviour
             playerAnimator.SetBool("isRunning", false);
         }
     }
+
+    public void PlayTargetAnimation(string animationName)
+    {
+        playerAnimator.CrossFade(animationName, 0.000000000000000000002f);
+    }
 }
