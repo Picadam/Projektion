@@ -7,12 +7,14 @@ public class PlayerManager : MonoBehaviour
 
     InputManager inputManager;
     PlayerLocomotion playerLocomotion;
+    Animator animator;
 
 
     private void Awake()
     {
         inputManager = GetComponent<InputManager>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
+        animator = GetComponent<Animator>();
     }
 
 
@@ -24,5 +26,11 @@ public class PlayerManager : MonoBehaviour
     private void FixedUpdate()
     {
         playerLocomotion.PlayerActions();
+    }
+
+    private void LateUpdate()
+    {
+        playerLocomotion.isJumping = animator.GetBool("isJumping");
+        animator.SetBool("isGrounded", playerLocomotion.isGrounded);
     }
 }
