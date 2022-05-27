@@ -310,11 +310,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1980166552, guid: 474f6a0553c35d548b3826d76200fdbe, type: 3}
       propertyPath: m_Height
-      value: 0.2273685
+      value: 0.23837987
       objectReference: {fileID: 0}
     - target: {fileID: 1980166552, guid: 474f6a0553c35d548b3826d76200fdbe, type: 3}
       propertyPath: m_Center.y
-      value: 0.118626766
+      value: 0.113121085
       objectReference: {fileID: 0}
     - target: {fileID: 1980166554, guid: 474f6a0553c35d548b3826d76200fdbe, type: 3}
       propertyPath: gravity
@@ -333,8 +333,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1980166554, guid: 474f6a0553c35d548b3826d76200fdbe, type: 3}
+      propertyPath: gravityIntensity
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980166554, guid: 474f6a0553c35d548b3826d76200fdbe, type: 3}
       propertyPath: groundLayer.m_Bits
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980166554, guid: 474f6a0553c35d548b3826d76200fdbe, type: 3}
+      propertyPath: rayCastHeightOffset
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 3614968742547625978, guid: 474f6a0553c35d548b3826d76200fdbe, type: 3}
       propertyPath: m_RootOrder
@@ -499,6 +507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b0c566ebd76f1f478dde5b9ad030aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 0}
 --- !u!1 &2017810382
 GameObject:
   m_ObjectHideFlags: 0
