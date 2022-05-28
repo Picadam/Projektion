@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Head
+  - Spawner
   layers:
   - Default
   - TransparentFX
