@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-39808
+  m_Name: pb_Mesh-1342
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1254,39 +1254,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3148885840067323411, guid: 6598f79d785268c408f4932098bd2bba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.3
+      value: 4.999999
       objectReference: {fileID: 0}
     - target: {fileID: 3148885840067323411, guid: 6598f79d785268c408f4932098bd2bba, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.38
+      value: -1.3799992
       objectReference: {fileID: 0}
     - target: {fileID: 3148885840067323411, guid: 6598f79d785268c408f4932098bd2bba, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.58086
+      value: 13.580865
       objectReference: {fileID: 0}
     - target: {fileID: 3148885840067323411, guid: 6598f79d785268c408f4932098bd2bba, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9698463
       objectReference: {fileID: 0}
     - target: {fileID: 3148885840067323411, guid: 6598f79d785268c408f4932098bd2bba, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.17101009
       objectReference: {fileID: 0}
     - target: {fileID: 3148885840067323411, guid: 6598f79d785268c408f4932098bd2bba, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.17101018
       objectReference: {fileID: 0}
     - target: {fileID: 3148885840067323411, guid: 6598f79d785268c408f4932098bd2bba, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.030153703
       objectReference: {fileID: 0}
     - target: {fileID: 3148885840067323411, guid: 6598f79d785268c408f4932098bd2bba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 3148885840067323411, guid: 6598f79d785268c408f4932098bd2bba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 3148885840067323411, guid: 6598f79d785268c408f4932098bd2bba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1295,6 +1295,16 @@ PrefabInstance:
     - target: {fileID: 3148885840067323420, guid: 6598f79d785268c408f4932098bd2bba, type: 3}
       propertyPath: m_Name
       value: CubeRotation
+      objectReference: {fileID: 0}
+    - target: {fileID: 6570221312691393670, guid: 6598f79d785268c408f4932098bd2bba, type: 3}
+      propertyPath: m_text
+      value: 'Music
+
+        Simon Meier
+
+        Alexandre Meier
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 8778835200381785409, guid: 6598f79d785268c408f4932098bd2bba, type: 3}
       propertyPath: m_Mesh
