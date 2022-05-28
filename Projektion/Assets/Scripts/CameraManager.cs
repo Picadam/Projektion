@@ -11,7 +11,7 @@ public class CameraManager : MonoBehaviour
     public Transform yPos;
     public Transform zPos;
 
-    private Transform next_pos = null;
+    private Transform nextPos = null;
 
     private bool animating = false;
 
@@ -31,13 +31,13 @@ public class CameraManager : MonoBehaviour
     {
         if (animating)
         {
-            if (Vector3.Distance(transform.position, next_pos.position) < 0.2f)
+            if (Vector3.Distance(transform.position, nextPos.position) < 0.2f)
             {
                 animating = false;
                 return;
             }
-            transform.SetPositionAndRotation(Vector3.Slerp(transform.position, next_pos.position, cameraSpeed * Time.deltaTime),
-                                             Quaternion.Slerp(transform.rotation, next_pos.rotation, cameraSpeed * Time.deltaTime));
+            transform.SetPositionAndRotation(Vector3.Slerp(transform.position, nextPos.position, cameraSpeed * Time.deltaTime),
+                                             Quaternion.Slerp(transform.rotation, nextPos.rotation, cameraSpeed * Time.deltaTime));
         }
     }
 
@@ -47,19 +47,19 @@ public class CameraManager : MonoBehaviour
         {
             if (cam == "x")
             {
-                next_pos = xPos;
+                nextPos = xPos;
                 animating = true;
                 GetComponent<Camera>().orthographic = false;
             }
             else if (cam == "y")
             {
-                next_pos = yPos;
+                nextPos = yPos;
                 animating = true;
                 GetComponent<Camera>().orthographic = true;
             }
             else if (cam == "z")
             {
-                next_pos = zPos;
+                nextPos = zPos;
                 animating = true;
                 GetComponent<Camera>().orthographic = true;
             }
