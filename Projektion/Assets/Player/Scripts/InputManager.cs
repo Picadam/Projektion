@@ -64,6 +64,7 @@ public class InputManager : MonoBehaviour
         // appeler dans locomotion
         if(isJumping)
         {
+            
             isJumping = false;
             playerLocomotion.PlayerJumping();
         }

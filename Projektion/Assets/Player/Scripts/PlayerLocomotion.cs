@@ -26,6 +26,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     public bool isJumping;
     public bool isGrounded;
+    public bool alreadyLanded = false;
 
     private void Awake()
     {
@@ -93,10 +94,16 @@ public class PlayerLocomotion : MonoBehaviour
             }
 
             isGrounded = true;
+            if(!alreadyLanded)
+            {
+                FindObjectOfType<AudioManager>().Play("landing");
+                alreadyLanded = true;
+            }
         }
         else
         {
             isGrounded = false;
+            alreadyLanded = false;
         }
     }
 
@@ -107,9 +114,17 @@ public class PlayerLocomotion : MonoBehaviour
             animatorManager.playerAnimator.SetBool("isJumping", true);
             animatorManager.PlayTargetAnimation("Jump");
 
-
+            if(alreadyLanded)
+            {
+                FindObjectOfType<AudioManager>().Play("jump");
+            }
             playerRigidbody.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
         }
+    }
+
+    private void Step()
+    {
+        FindObjectOfType<AudioManager>().Play("step");
     }
 
     
