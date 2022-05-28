@@ -52,6 +52,11 @@ public class CameraManager : MonoBehaviour
             Debug.Log(cpt);
             nextPos = camPos[cpt];
             animating = true;
+
+            if (cpt == 2)
+                GetComponent<Camera>().orthographicSize = 10;
+            else
+                GetComponent<Camera>().orthographicSize = 18;
         }
     }
 }
