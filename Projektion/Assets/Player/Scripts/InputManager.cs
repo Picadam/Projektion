@@ -33,9 +33,8 @@ public class InputManager : MonoBehaviour
 
             playerControls.PlayerActions.Jumping.performed += i => isJumping = true;
 
-            playerControls.PlayerActions.SwitchCameraX.performed += i => mainCamera.GetComponent<CameraManager>().SwitchCamera("x");
-            playerControls.PlayerActions.SwitchCameraY.performed += i => mainCamera.GetComponent<CameraManager>().SwitchCamera("y");
-            playerControls.PlayerActions.SwitchCameraZ.performed += i => mainCamera.GetComponent<CameraManager>().SwitchCamera("z");
+            playerControls.PlayerActions.SwitchCameraNext.performed += i => mainCamera.GetComponent<CameraManager>().SwitchCamera(1);
+            playerControls.PlayerActions.SwitchCameraPrevious.performed += i => mainCamera.GetComponent<CameraManager>().SwitchCamera(-1);
 
         }
 

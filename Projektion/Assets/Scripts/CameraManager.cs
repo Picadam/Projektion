@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    public float cameraSpeed = 5f;
+    public float cameraSpeed = 15f;
 
     public Transform xPos;
     public Transform yPos;
@@ -14,10 +14,13 @@ public class CameraManager : MonoBehaviour
     private Transform nextPos = null;
 
     private bool animating = false;
+    private Transform[] camPos;
+    private int cpt;
 
     // Start is called before the first frame update
     void Start()
     {
+        camPos = new Transform[] { zPos, yPos, xPos };
         transform.SetPositionAndRotation(zPos.position, zPos.rotation);
     }
 
@@ -31,7 +34,7 @@ public class CameraManager : MonoBehaviour
     {
         if (animating)
         {
-            if (Vector3.Distance(transform.position, nextPos.position) < 0.2f)
+            if (Vector3.Distance(transform.position, nextPos.position) < 0.02f)
             {
                 animating = false;
                 return;
@@ -41,28 +44,14 @@ public class CameraManager : MonoBehaviour
         }
     }
 
-    public void SwitchCamera(string cam)
+    public void SwitchCamera(int direction)
     { 
         if (!animating)
         {
-            if (cam == "x")
-            {
-                nextPos = xPos;
-                animating = true;
-                GetComponent<Camera>().orthographic = false;
-            }
-            else if (cam == "y")
-            {
-                nextPos = yPos;
-                animating = true;
-                GetComponent<Camera>().orthographic = true;
-            }
-            else if (cam == "z")
-            {
-                nextPos = zPos;
-                animating = true;
-                GetComponent<Camera>().orthographic = true;
-            }
+            cpt = ((cpt + camPos.Length) + direction) % camPos.Length;
+            Debug.Log(cpt);
+            nextPos = camPos[cpt];
+            animating = true;
         }
     }
 }
