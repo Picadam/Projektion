@@ -829,6 +829,8 @@ GameObject:
   - component: {fileID: 1980166554}
   - component: {fileID: 7355187594352874321}
   - component: {fileID: 1742039659}
+  - component: {fileID: 287333618}
+  - component: {fileID: 8892632606893021969}
   m_Layer: 0
   m_Name: Astronaut
   m_TagString: Untagged
@@ -897,10 +899,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.092084445
-  m_Height: 0.23867822
+  m_Radius: 0.044063188
+  m_Height: 0.106046274
   m_Direction: 1
-  m_Center: {x: 0.0019154191, y: 0.1129719, z: 0}
+  m_Center: {x: -0.0009334564, y: 0.049747597, z: -0.007624674}
 --- !u!114 &1980166553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -934,16 +936,14 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 1
-  playerSpeed: 5
+  playerSpeed: 15
   playerRotationSpeed: 10
-  jumpHeight: 10
-  gravityIntensity: -30
-  fallingSpeed: 1000
-  fallingVelocity: 10
+  jumpHeight: 20
+  gravityScale: 500
   rayCastHeightOffset: 0.5
-  inAirTimer: 0
   isJumping: 0
-  isGrounded: 0
+  isGrounded: 1
+  alreadyLanded: 1
 --- !u!114 &7355187594352874321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -969,6 +969,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 0}
+--- !u!114 &287333618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3614968742547983322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42de95f30754c0c4386b2924a5130170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8892632606893021969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3614968742547983322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448bad10e3ed10c4388ff186e61d6ca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawner: {fileID: 0}
 --- !u!1 &3614968742547983324
 GameObject:
   m_ObjectHideFlags: 0

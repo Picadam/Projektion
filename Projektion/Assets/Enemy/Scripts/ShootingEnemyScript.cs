@@ -21,19 +21,19 @@ public class ShootingEnemyScript : EnemyScript
     // Update is called once per frame
     void Update()
     {
-        if (canShoot)
+       /* if (canShoot)
         {
             canShoot = false;
             Shoot();
-        }
+        } */
     }
 
-    async void Shoot()
+    public void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab, shootingPoint.position, Quaternion.LookRotation(transform.forward));
-        bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletForce);
+        GameObject bullet = Instantiate(bulletPrefab, shootingPoint.position, Quaternion.LookRotation(shootingPoint.forward));
+        bullet.GetComponent<Rigidbody>().AddForce(shootingPoint.forward * bulletForce);
         bullet.transform.Rotate(90, 0, 0);
-        await Task.Delay((int)(shootRate * 1000));
+        //await Task.Delay((int)(shootRate * 1000));
         canShoot = true;
 
     }

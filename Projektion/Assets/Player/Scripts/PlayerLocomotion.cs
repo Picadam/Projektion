@@ -20,17 +20,13 @@ public class PlayerLocomotion : MonoBehaviour
     public float playerRotationSpeed = 10;
 
     public float jumpHeight = 3;
-    public float gravityIntensity = -30;
-
-    public float fallingSpeed;
-    public float fallingVelocity;
+    public float gravityScale = 5;
 
     public float rayCastHeightOffset = 0.5f;
 
-    public float inAirTimer;
-
     public bool isJumping;
     public bool isGrounded;
+    public bool alreadyLanded = false;
 
     private void Awake()
     {
@@ -87,9 +83,7 @@ public class PlayerLocomotion : MonoBehaviour
         {
             animatorManager.PlayTargetAnimation("Falling");
 
-            inAirTimer += Time.deltaTime;
-            playerRigidbody.AddForce(transform.forward * fallingVelocity);
-            playerRigidbody.AddForce(fallingSpeed * inAirTimer * -Vector3.up);
+            playerRigidbody.AddForce(gravityScale * Vector3.down);
         }
 
         if(Physics.SphereCast(rayCastOrigin, 0.0000000000001f, -Vector3.up, out hit, groundLayer))
@@ -99,12 +93,17 @@ public class PlayerLocomotion : MonoBehaviour
                 animatorManager.PlayTargetAnimation("Landing");
             }
 
-            inAirTimer = 0;
             isGrounded = true;
+            if(!alreadyLanded)
+            {
+                FindObjectOfType<AudioManager>().Play("landing");
+                alreadyLanded = true;
+            }
         }
         else
         {
             isGrounded = false;
+            alreadyLanded = false;
         }
     }
 
@@ -115,11 +114,17 @@ public class PlayerLocomotion : MonoBehaviour
             animatorManager.playerAnimator.SetBool("isJumping", true);
             animatorManager.PlayTargetAnimation("Jump");
 
-            float jumpVelocity = Mathf.Sqrt(-2 * gravityIntensity * jumpHeight);
-            Vector3 playerVelocity = direction;
-            playerVelocity.y = jumpVelocity;
-            playerRigidbody.velocity = playerVelocity;
+            if(alreadyLanded)
+            {
+                FindObjectOfType<AudioManager>().Play("jump");
+            }
+            playerRigidbody.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
         }
+    }
+
+    private void Step()
+    {
+        FindObjectOfType<AudioManager>().Play("step");
     }
 
     
