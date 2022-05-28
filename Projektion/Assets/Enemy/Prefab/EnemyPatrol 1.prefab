@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 604516811184257027}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,7 +155,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604516811435604175}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5868335, y: 0, z: 5.8823385}
+  m_LocalPosition: {x: -0.03451538, y: 0, z: 12.6840315}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 604516811446807170}
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 604516811446807170}
   m_Layer: 0
   m_Name: EnemyPatrol 1
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -270,7 +270,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604516811455480309}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -4.3159685}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 604516811446807170}
@@ -338,15 +338,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 538626261890316100, guid: e9397b16f5adff04f92f1f0057374c2f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 538626261890316100, guid: e9397b16f5adff04f92f1f0057374c2f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 538626261890316100, guid: e9397b16f5adff04f92f1f0057374c2f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 538626261890316100, guid: e9397b16f5adff04f92f1f0057374c2f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -392,6 +392,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyWalking
       objectReference: {fileID: 0}
+    - target: {fileID: 878840845130493438, guid: e9397b16f5adff04f92f1f0057374c2f, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484740921577007849, guid: e9397b16f5adff04f92f1f0057374c2f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dae06c562b34d54469fd67dd365c5453, type: 2}
+    - target: {fileID: 5879934678052826430, guid: e9397b16f5adff04f92f1f0057374c2f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c1113907b95ae6f44a0b5493601fe6f9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9397b16f5adff04f92f1f0057374c2f, type: 3}
 --- !u!1 &5751908162871207109 stripped
@@ -404,20 +416,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 538626261890316100, guid: e9397b16f5adff04f92f1f0057374c2f, type: 3}
   m_PrefabInstance: {fileID: 4891090513416997179}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &4891090512370087547
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5751908162871207109}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.53631973
-  m_Height: 1.3803864
-  m_Direction: 1
-  m_Center: {x: -0.008548737, y: 0.7029481, z: 0.03204727}
 --- !u!54 &4891090512370087548
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -434,6 +432,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!136 &4891090512370087547
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5751908162871207109}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.53631973
+  m_Height: 1.3803864
+  m_Direction: 1
+  m_Center: {x: -0.008548737, y: 0.7029481, z: 0.03204727}
 --- !u!114 &4891090512370087549
 MonoBehaviour:
   m_ObjectHideFlags: 0
