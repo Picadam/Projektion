@@ -934,16 +934,13 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 1
-  playerSpeed: 5
+  playerSpeed: 15
   playerRotationSpeed: 10
-  jumpHeight: 10
-  gravityIntensity: -30
-  fallingSpeed: 1000
-  fallingVelocity: 10
+  jumpHeight: 12
+  gravityScale: 80
   rayCastHeightOffset: 0.5
-  inAirTimer: 0
   isJumping: 0
-  isGrounded: 0
+  isGrounded: 1
 --- !u!114 &7355187594352874321
 MonoBehaviour:
   m_ObjectHideFlags: 0
