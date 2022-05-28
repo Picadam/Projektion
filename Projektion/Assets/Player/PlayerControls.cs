@@ -250,6 +250,157 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Menu"",
+            ""id"": ""6f8e8758-c0c4-478a-a355-bffe473bc5b7"",
+            ""actions"": [
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""59cd655b-2b31-4f1e-802c-b460f9fe6d00"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""c74dea41-f010-4e82-b3b4-1526f929589d"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4b863997-00b6-4144-8c18-234030cc71ba"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Cube"",
+            ""id"": ""a863c774-b501-4840-a045-44aa52fe5e9f"",
+            ""actions"": [
+                {
+                    ""name"": ""CubeRotation"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""e97b60f8-7c8c-44b1-8c46-2eaaedac5f8a"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Mouse"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""4813f3ea-d4a9-4df5-b6ae-cc8afe1e19ca"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LeftClick"",
+                    ""type"": ""Button"",
+                    ""id"": ""0549163e-9690-477b-8007-a8ffc0bb4dca"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""RightJoy"",
+                    ""id"": ""dda488fb-f7cf-41a3-b8d1-8622eb7d05ac"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CubeRotation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""66e24f80-cda8-4080-9f40-3c310518e927"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CubeRotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""1b8d6f78-7973-4eaa-9ae4-6ec8d7219bcd"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CubeRotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""72e565ef-587f-4559-a44a-f841d96cd7d3"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CubeRotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""e13f71e3-e216-48f8-b040-a322ccc7450b"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CubeRotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2f1f6c6a-0345-4e9f-98d6-9af6dc531ccb"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mouse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b154c5e9-af4e-426f-ac9d-32dcdad182e9"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -262,6 +413,14 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_PlayerActions_Jumping = m_PlayerActions.FindAction("Jumping", throwIfNotFound: true);
         m_PlayerActions_SwitchCameraPrevious = m_PlayerActions.FindAction("SwitchCameraPrevious", throwIfNotFound: true);
         m_PlayerActions_SwitchCameraNext = m_PlayerActions.FindAction("SwitchCameraNext", throwIfNotFound: true);
+        // Menu
+        m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
+        m_Menu_Pause = m_Menu.FindAction("Pause", throwIfNotFound: true);
+        // Cube
+        m_Cube = asset.FindActionMap("Cube", throwIfNotFound: true);
+        m_Cube_CubeRotation = m_Cube.FindAction("CubeRotation", throwIfNotFound: true);
+        m_Cube_Mouse = m_Cube.FindAction("Mouse", throwIfNotFound: true);
+        m_Cube_LeftClick = m_Cube.FindAction("LeftClick", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -399,6 +558,88 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         }
     }
     public PlayerActionsActions @PlayerActions => new PlayerActionsActions(this);
+
+    // Menu
+    private readonly InputActionMap m_Menu;
+    private IMenuActions m_MenuActionsCallbackInterface;
+    private readonly InputAction m_Menu_Pause;
+    public struct MenuActions
+    {
+        private @PlayerControls m_Wrapper;
+        public MenuActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Pause => m_Wrapper.m_Menu_Pause;
+        public InputActionMap Get() { return m_Wrapper.m_Menu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MenuActions set) { return set.Get(); }
+        public void SetCallbacks(IMenuActions instance)
+        {
+            if (m_Wrapper.m_MenuActionsCallbackInterface != null)
+            {
+                @Pause.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnPause;
+            }
+            m_Wrapper.m_MenuActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
+            }
+        }
+    }
+    public MenuActions @Menu => new MenuActions(this);
+
+    // Cube
+    private readonly InputActionMap m_Cube;
+    private ICubeActions m_CubeActionsCallbackInterface;
+    private readonly InputAction m_Cube_CubeRotation;
+    private readonly InputAction m_Cube_Mouse;
+    private readonly InputAction m_Cube_LeftClick;
+    public struct CubeActions
+    {
+        private @PlayerControls m_Wrapper;
+        public CubeActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @CubeRotation => m_Wrapper.m_Cube_CubeRotation;
+        public InputAction @Mouse => m_Wrapper.m_Cube_Mouse;
+        public InputAction @LeftClick => m_Wrapper.m_Cube_LeftClick;
+        public InputActionMap Get() { return m_Wrapper.m_Cube; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CubeActions set) { return set.Get(); }
+        public void SetCallbacks(ICubeActions instance)
+        {
+            if (m_Wrapper.m_CubeActionsCallbackInterface != null)
+            {
+                @CubeRotation.started -= m_Wrapper.m_CubeActionsCallbackInterface.OnCubeRotation;
+                @CubeRotation.performed -= m_Wrapper.m_CubeActionsCallbackInterface.OnCubeRotation;
+                @CubeRotation.canceled -= m_Wrapper.m_CubeActionsCallbackInterface.OnCubeRotation;
+                @Mouse.started -= m_Wrapper.m_CubeActionsCallbackInterface.OnMouse;
+                @Mouse.performed -= m_Wrapper.m_CubeActionsCallbackInterface.OnMouse;
+                @Mouse.canceled -= m_Wrapper.m_CubeActionsCallbackInterface.OnMouse;
+                @LeftClick.started -= m_Wrapper.m_CubeActionsCallbackInterface.OnLeftClick;
+                @LeftClick.performed -= m_Wrapper.m_CubeActionsCallbackInterface.OnLeftClick;
+                @LeftClick.canceled -= m_Wrapper.m_CubeActionsCallbackInterface.OnLeftClick;
+            }
+            m_Wrapper.m_CubeActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @CubeRotation.started += instance.OnCubeRotation;
+                @CubeRotation.performed += instance.OnCubeRotation;
+                @CubeRotation.canceled += instance.OnCubeRotation;
+                @Mouse.started += instance.OnMouse;
+                @Mouse.performed += instance.OnMouse;
+                @Mouse.canceled += instance.OnMouse;
+                @LeftClick.started += instance.OnLeftClick;
+                @LeftClick.performed += instance.OnLeftClick;
+                @LeftClick.canceled += instance.OnLeftClick;
+            }
+        }
+    }
+    public CubeActions @Cube => new CubeActions(this);
     public interface IPlayerMovementActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -408,5 +649,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnJumping(InputAction.CallbackContext context);
         void OnSwitchCameraPrevious(InputAction.CallbackContext context);
         void OnSwitchCameraNext(InputAction.CallbackContext context);
+    }
+    public interface IMenuActions
+    {
+        void OnPause(InputAction.CallbackContext context);
+    }
+    public interface ICubeActions
+    {
+        void OnCubeRotation(InputAction.CallbackContext context);
+        void OnMouse(InputAction.CallbackContext context);
+        void OnLeftClick(InputAction.CallbackContext context);
     }
 }
