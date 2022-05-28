@@ -1873,7 +1873,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &125389208
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8757,6 +8757,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 604516811184257033, guid: ec087eda72e278445bc732d0b3c0067a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 604516811435604172, guid: ec087eda72e278445bc732d0b3c0067a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.03451538
+      objectReference: {fileID: 0}
+    - target: {fileID: 604516811435604172, guid: ec087eda72e278445bc732d0b3c0067a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.6840315
+      objectReference: {fileID: 0}
     - target: {fileID: 604516811446807170, guid: ec087eda72e278445bc732d0b3c0067a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -8805,10 +8817,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyPatrol
       objectReference: {fileID: 0}
+    - target: {fileID: 604516811446807173, guid: ec087eda72e278445bc732d0b3c0067a, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 604516811455480306, guid: ec087eda72e278445bc732d0b3c0067a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.3159685
+      objectReference: {fileID: 0}
     - target: {fileID: 1331127634068120581, guid: ec087eda72e278445bc732d0b3c0067a, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c1113907b95ae6f44a0b5493601fe6f9, type: 2}
+    - target: {fileID: 4943036300013600383, guid: ec087eda72e278445bc732d0b3c0067a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943036300013600383, guid: ec087eda72e278445bc732d0b3c0067a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943036300013600383, guid: ec087eda72e278445bc732d0b3c0067a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5751908162871207109, guid: ec087eda72e278445bc732d0b3c0067a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 9069586588392072146, guid: ec087eda72e278445bc732d0b3c0067a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
