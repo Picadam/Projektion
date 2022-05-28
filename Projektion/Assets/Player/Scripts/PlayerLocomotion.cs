@@ -19,8 +19,8 @@ public class PlayerLocomotion : MonoBehaviour
     public float playerSpeed = 5;
     public float playerRotationSpeed = 10;
 
-    public float jumpHeight = 3;
-    public float gravityScale = 5;
+    public float jumpForce = 30;
+    public float gravityScale = 50;
 
     public float rayCastHeightOffset = 0.5f;
 
@@ -42,6 +42,7 @@ public class PlayerLocomotion : MonoBehaviour
         PlayerMovement();
         PlayerFallingLanding();
     }
+
     private void PlayerMovement()
     {
         if(isJumping)
@@ -83,8 +84,9 @@ public class PlayerLocomotion : MonoBehaviour
         {
             animatorManager.PlayTargetAnimation("Falling");
 
-            playerRigidbody.AddForce(gravityScale * Vector3.down);
+            playerRigidbody.velocity = new Vector3(playerRigidbody.velocity.x, -gravityScale, playerRigidbody.velocity.z);
         }
+
 
         if(Physics.SphereCast(rayCastOrigin, 0.0000000000001f, -Vector3.up, out hit, groundLayer))
         {
@@ -118,7 +120,7 @@ public class PlayerLocomotion : MonoBehaviour
             {
                 FindObjectOfType<AudioManager>().Play("jump");
             }
-            playerRigidbody.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+            playerRigidbody.velocity = new Vector3(playerRigidbody.velocity.x, jumpForce, playerRigidbody.velocity.z);
         }
     }
 

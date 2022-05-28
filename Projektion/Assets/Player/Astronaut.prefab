@@ -830,7 +830,6 @@ GameObject:
   - component: {fileID: 7355187594352874321}
   - component: {fileID: 1742039659}
   - component: {fileID: 287333618}
-  - component: {fileID: 8892632606893021969}
   m_Layer: 0
   m_Name: Astronaut
   m_TagString: Untagged
@@ -938,8 +937,8 @@ MonoBehaviour:
     m_Bits: 1
   playerSpeed: 15
   playerRotationSpeed: 10
-  jumpHeight: 20
-  gravityScale: 500
+  jumpForce: 20
+  gravityScale: 30
   rayCastHeightOffset: 0.5
   isJumping: 0
   isGrounded: 1
@@ -981,19 +980,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42de95f30754c0c4386b2924a5130170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8892632606893021969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3614968742547983322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 448bad10e3ed10c4388ff186e61d6ca7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawner: {fileID: 0}
 --- !u!1 &3614968742547983324
 GameObject:
   m_ObjectHideFlags: 0
