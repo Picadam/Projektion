@@ -936,11 +936,12 @@ MonoBehaviour:
     m_Bits: 1
   playerSpeed: 15
   playerRotationSpeed: 10
-  jumpHeight: 12
-  gravityScale: 80
+  jumpHeight: 20
+  gravityScale: 500
   rayCastHeightOffset: 0.5
   isJumping: 0
   isGrounded: 1
+  alreadyLanded: 1
 --- !u!114 &7355187594352874321
 MonoBehaviour:
   m_ObjectHideFlags: 0

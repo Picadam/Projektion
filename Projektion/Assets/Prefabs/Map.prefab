@@ -3539,7 +3539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b45c9bfdfb29f646b4d0da1d9cc871c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraSpeed: 5
+  cameraSpeed: 30
   xPos: {fileID: 968650177570012198}
   yPos: {fileID: 968650177739940426}
   zPos: {fileID: 968650177255149086}
