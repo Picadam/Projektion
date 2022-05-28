@@ -15,16 +15,10 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-
-        if (collision.collider as CapsuleCollider != null && collision.gameObject.tag == "Enemy")
+        if(collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("This nigga is dead");
-            Destroy(collision.gameObject);
-        }
-
-        if(collision.collider as BoxCollider != null && collision.gameObject.tag == "Enemy")
-        {
-            Debug.Log("Là c'est moi qui suis mort");
+            // petit effet avant a mettre plus tard
+            // jouer le son
             respawn.ResetScene();
         }
     }

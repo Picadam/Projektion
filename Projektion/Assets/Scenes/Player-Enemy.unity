@@ -1865,9 +1865,8 @@ GameObject:
   - component: {fileID: 125389212}
   - component: {fileID: 125389211}
   - component: {fileID: 125389210}
-  - component: {fileID: 125389209}
   - component: {fileID: 125389208}
-  - component: {fileID: 125389213}
+  - component: {fileID: 125389209}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Enemy
@@ -1901,10 +1900,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.4238472
-  m_Height: 0.88352966
+  m_Radius: 0.5
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0.0044822693, y: 0.5834222, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &125389210
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1968,19 +1967,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &125389213
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 125389207}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.107521, y: 1.7132808, z: 1}
-  m_Center: {x: -0.0000038146973, y: -0.17023951, z: 0}
 --- !u!43 &142507680
 Mesh:
   m_ObjectHideFlags: 0
