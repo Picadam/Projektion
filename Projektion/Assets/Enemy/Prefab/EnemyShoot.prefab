@@ -55,7 +55,7 @@ Transform:
   m_GameObject: {fileID: 6113046240472865575}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 19, y: 1, z: -16}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 6379353415808729239}
   - {fileID: 8533758178593128752}
@@ -218,6 +218,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shooter
       objectReference: {fileID: 0}
+    - target: {fileID: 2715155269220317835, guid: 9acd4c818d7d4ef468809e1fabbd6498, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3164230895297894488, guid: 9acd4c818d7d4ef468809e1fabbd6498, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -324,3 +328,19 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6796917104148843477, guid: a9e3934bf3c799f4d82d2968622f0029, type: 3}
   bulletForce: 500
   shootRate: 10
+--- !u!54 &1770550332
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9017947483825806218}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
