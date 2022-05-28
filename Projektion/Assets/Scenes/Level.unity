@@ -646,14 +646,6 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1003518793}
-    - target: {fileID: 1980166554, guid: 474f6a0553c35d548b3826d76200fdbe, type: 3}
-      propertyPath: jumpHeight
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1980166554, guid: 474f6a0553c35d548b3826d76200fdbe, type: 3}
-      propertyPath: playerSpeed
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 3614968742547625978, guid: 474f6a0553c35d548b3826d76200fdbe, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2757,18 +2749,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1993913274}
-    - target: {fileID: 968650177255149086, guid: 49702270c3927854da9711358a9764d3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.05500003
-      objectReference: {fileID: 0}
-    - target: {fileID: 968650177361342675, guid: 49702270c3927854da9711358a9764d3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.055
-      objectReference: {fileID: 0}
-    - target: {fileID: 968650177739940426, guid: 49702270c3927854da9711358a9764d3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.05500003
-      objectReference: {fileID: 0}
     - target: {fileID: 968650177901960988, guid: 49702270c3927854da9711358a9764d3, type: 3}
       propertyPath: player
       value: 
