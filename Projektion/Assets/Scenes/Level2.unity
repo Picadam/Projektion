@@ -838,10 +838,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Astronaut
       objectReference: {fileID: 0}
-    - target: {fileID: 3614968742547983322, guid: 474f6a0553c35d548b3826d76200fdbe, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 474f6a0553c35d548b3826d76200fdbe, type: 3}
 --- !u!1001 &195847450
@@ -3375,23 +3371,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &738463016 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3614968742547983322, guid: 474f6a0553c35d548b3826d76200fdbe, type: 3}
-  m_PrefabInstance: {fileID: 175251557}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &738463025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 738463016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 448bad10e3ed10c4388ff186e61d6ca7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!43 &854807466
 Mesh:
   m_ObjectHideFlags: 0

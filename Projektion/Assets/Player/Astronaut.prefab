@@ -830,6 +830,7 @@ GameObject:
   - component: {fileID: 7355187594352874321}
   - component: {fileID: 1742039659}
   - component: {fileID: 287333618}
+  - component: {fileID: 738463025}
   m_Layer: 0
   m_Name: Astronaut
   m_TagString: Player
@@ -899,9 +900,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.044063188
-  m_Height: 0.106046274
+  m_Height: 0.23364475
   m_Direction: 1
-  m_Center: {x: -0.0009334564, y: 0.049747597, z: -0.007624674}
+  m_Center: {x: -0.0009334564, y: 0.11354684, z: -0.007624674}
 --- !u!114 &1980166553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -978,6 +979,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42de95f30754c0c4386b2924a5130170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &738463025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3614968742547983322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448bad10e3ed10c4388ff186e61d6ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3614968742547983324
