@@ -180,6 +180,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cancel"",
+                    ""type"": ""Button"",
+                    ""id"": ""85b628db-f3e0-47ac-a40b-08b5dd42095a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -246,6 +255,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""SwitchCameraNext"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1bd998b0-5ce4-426c-820b-71b1a4fb3029"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cancel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -413,6 +433,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_PlayerActions_Jumping = m_PlayerActions.FindAction("Jumping", throwIfNotFound: true);
         m_PlayerActions_SwitchCameraPrevious = m_PlayerActions.FindAction("SwitchCameraPrevious", throwIfNotFound: true);
         m_PlayerActions_SwitchCameraNext = m_PlayerActions.FindAction("SwitchCameraNext", throwIfNotFound: true);
+        m_PlayerActions_Cancel = m_PlayerActions.FindAction("Cancel", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_Pause = m_Menu.FindAction("Pause", throwIfNotFound: true);
@@ -516,6 +537,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_Jumping;
     private readonly InputAction m_PlayerActions_SwitchCameraPrevious;
     private readonly InputAction m_PlayerActions_SwitchCameraNext;
+    private readonly InputAction m_PlayerActions_Cancel;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
@@ -523,6 +545,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Jumping => m_Wrapper.m_PlayerActions_Jumping;
         public InputAction @SwitchCameraPrevious => m_Wrapper.m_PlayerActions_SwitchCameraPrevious;
         public InputAction @SwitchCameraNext => m_Wrapper.m_PlayerActions_SwitchCameraNext;
+        public InputAction @Cancel => m_Wrapper.m_PlayerActions_Cancel;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -541,6 +564,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @SwitchCameraNext.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSwitchCameraNext;
                 @SwitchCameraNext.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSwitchCameraNext;
                 @SwitchCameraNext.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSwitchCameraNext;
+                @Cancel.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnCancel;
+                @Cancel.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnCancel;
+                @Cancel.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnCancel;
             }
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -554,6 +580,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @SwitchCameraNext.started += instance.OnSwitchCameraNext;
                 @SwitchCameraNext.performed += instance.OnSwitchCameraNext;
                 @SwitchCameraNext.canceled += instance.OnSwitchCameraNext;
+                @Cancel.started += instance.OnCancel;
+                @Cancel.performed += instance.OnCancel;
+                @Cancel.canceled += instance.OnCancel;
             }
         }
     }
@@ -649,6 +678,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnJumping(InputAction.CallbackContext context);
         void OnSwitchCameraPrevious(InputAction.CallbackContext context);
         void OnSwitchCameraNext(InputAction.CallbackContext context);
+        void OnCancel(InputAction.CallbackContext context);
     }
     public interface IMenuActions
     {

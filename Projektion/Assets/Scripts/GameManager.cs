@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Threading.Tasks;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour
     PlayerControls playerControls;
     public static GameManager instance;
     public GameObject pauseMenu;
+    private bool inPause;
+    public GameObject resumeButton;
 
     void Awake()
     {
@@ -30,6 +33,7 @@ public class GameManager : MonoBehaviour
         {
             playerControls = new PlayerControls();
             playerControls.Menu.Pause.performed += i => PauseResume();
+            playerControls.PlayerMovement.Movement.performed += i => MoveInPauseMenu();
 
         }
 
@@ -56,9 +60,10 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 0f;
             pauseMenu.SetActive(true);
+            inPause = true;
             return;
         }
-
+        inPause = false;
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
 
@@ -66,6 +71,7 @@ public class GameManager : MonoBehaviour
 
     public void Home()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 
@@ -77,8 +83,6 @@ public class GameManager : MonoBehaviour
     public async void NextLevel()
     {
         int index = SceneManager.GetActiveScene().buildIndex + 1;
-        Debug.Log(index);
-        Debug.Log(SceneManager.sceneCountInBuildSettings);
         if (index >= SceneManager.sceneCountInBuildSettings)
         {
             FinishGame();
@@ -90,23 +94,15 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(index);
     }
 
-    public void Level1()
-    {
-        SceneManager.LoadScene("Level2");
-    }
 
-    public void Level2()
+    public void MoveInPauseMenu()
     {
-        SceneManager.LoadScene("Level");
-    }
-
-    public void Quit()
-    {
-        Application.Quit();
-    }
-
-    private void StartTimer()
-    {
-
+        if(inPause)
+        {
+            if (playerControls.PlayerMovement.Movement.ReadValue<Vector2>().magnitude > 0 && EventSystem.current.currentSelectedGameObject == null)
+            {
+                EventSystem.current.SetSelectedGameObject(resumeButton);
+            }
+        }
     }
 }
