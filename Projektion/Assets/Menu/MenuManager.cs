@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
@@ -55,6 +56,22 @@ public class MenuManager : MonoBehaviour
         Main.SetActive(true);
         Levels.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
+    }
+
+
+    public void Level1()
+    {
+        SceneManager.LoadScene("Level2");
+    }
+
+    public void Level2()
+    {
+        SceneManager.LoadScene("Level");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 
     private void OnDestroy()

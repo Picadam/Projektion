@@ -735,8 +735,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1317183056}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 862614620}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: Level2
         m_Mode: 1
         m_Arguments:
@@ -790,17 +790,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1204916160705106954, guid: a7af078d70fc44646a39db0f58c07b74, type: 3}
   m_PrefabInstance: {fileID: 3509720342737039343}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1317183056 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5781627248229291001, guid: a7af078d70fc44646a39db0f58c07b74, type: 3}
-  m_PrefabInstance: {fileID: 3509720342737039343}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc364e2bd8e0924458ed4ffc0a330578, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1339856799
 GameObject:
   m_ObjectHideFlags: 0
@@ -1408,14 +1397,18 @@ PrefabInstance:
     - target: {fileID: 8387558134623209251, guid: ebd6451d7ec91034aa14cb0973108c76, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1317183056}
+      objectReference: {fileID: 862614620}
+    - target: {fileID: 8387558134623209251, guid: ebd6451d7ec91034aa14cb0973108c76, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8387558134623209251, guid: ebd6451d7ec91034aa14cb0973108c76, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Quit
       objectReference: {fileID: 0}
     - target: {fileID: 8387558134623209251, guid: ebd6451d7ec91034aa14cb0973108c76, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
+      value: MenuManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8387558135147600044, guid: ebd6451d7ec91034aa14cb0973108c76, type: 3}
       propertyPath: m_IsActive
@@ -1448,7 +1441,7 @@ PrefabInstance:
     - target: {fileID: 8387558135571093964, guid: ebd6451d7ec91034aa14cb0973108c76, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1317183056}
+      objectReference: {fileID: 862614620}
     - target: {fileID: 8387558135571093964, guid: ebd6451d7ec91034aa14cb0973108c76, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1459,7 +1452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8387558135571093964, guid: ebd6451d7ec91034aa14cb0973108c76, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
+      value: MenuManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8387558135571093964, guid: ebd6451d7ec91034aa14cb0973108c76, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

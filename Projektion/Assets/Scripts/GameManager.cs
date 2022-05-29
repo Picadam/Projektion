@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour
 
     public void Home()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 
@@ -93,20 +94,6 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(index);
     }
 
-    public void Level1()
-    {
-        SceneManager.LoadScene("Level2");
-    }
-
-    public void Level2()
-    {
-        SceneManager.LoadScene("Level");
-    }
-
-    public void Quit()
-    {
-        Application.Quit();
-    }
 
     public void MoveInPauseMenu()
     {
