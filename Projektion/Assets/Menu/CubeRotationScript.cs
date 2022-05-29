@@ -6,6 +6,7 @@ using UnityEngine;
 public class CubeRotationScript : MonoBehaviour
 {
     PlayerControls playerControls;
+    public float rotationForce;
 
     private void OnEnable()
     {
@@ -19,7 +20,7 @@ public class CubeRotationScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Vector2 vec;
         if (Gamepad.all.Count > 0)
@@ -31,14 +32,16 @@ public class CubeRotationScript : MonoBehaviour
             vec = playerControls.Cube.Mouse.ReadValue<Vector2>();
         }
 
+        vec *= rotationForce;
+
         if (vec.magnitude > 0 && (playerControls.Cube.LeftClick.IsPressed() || Gamepad.all.Count > 0))
         {
-            GetComponent<Rigidbody>().AddTorque(vec.y, -vec.x, 0);
+            gameObject.GetComponent<Rigidbody>().AddTorque(vec.y, -vec.x, 0);
         }
         else
         {
-            var angularVelo = GetComponent<Rigidbody>().angularVelocity;
-            GetComponent<Rigidbody>().AddTorque(-angularVelo/3);
+            var angularVelo = GetComponent<Rigidbody>().angularVelocity * 2f;
+            GetComponent<Rigidbody>().AddTorque(-angularVelo);
         }
     }
 }
