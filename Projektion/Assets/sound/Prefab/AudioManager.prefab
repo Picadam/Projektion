@@ -82,7 +82,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: theme
     clip: {fileID: 8300000, guid: e1d9a64bfd01d9a49930696b147be9da, type: 3}
-    volume: 0.8
+    volume: 0.65
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: win
+    clip: {fileID: 8300000, guid: 10ae4975bdce00740aff70fd6b059524, type: 3}
+    volume: 0.65
+    pitch: 1
+    loop: 0
     source: {fileID: 0}

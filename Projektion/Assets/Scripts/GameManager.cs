@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class GameManager : MonoBehaviour
         if (instance == null)
             instance = this;
         else
-        {
+        {            
             Destroy(gameObject);
             return;
         }
@@ -66,5 +67,46 @@ public class GameManager : MonoBehaviour
     public void Home()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void FinishGame()
+    {
+        
+    }
+
+    public async void NextLevel()
+    {
+        int index = SceneManager.GetActiveScene().buildIndex + 1;
+        Debug.Log(index);
+        Debug.Log(SceneManager.sceneCountInBuildSettings);
+        if (index >= SceneManager.sceneCountInBuildSettings)
+        {
+            FinishGame();
+            return;
+        }
+
+        FindObjectOfType<AudioManager>().Play("win");
+        await Task.Delay(2000);
+        SceneManager.LoadScene(index);
+    }
+
+    public void Level1()
+    {
+        SceneManager.LoadScene("Level2");
+    }
+
+    public void Level2()
+    {
+        SceneManager.LoadScene("Level");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    private void StartTimer()
+    {
+
     }
 }

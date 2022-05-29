@@ -32,6 +32,7 @@ public class CoinScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             FindObjectOfType<AudioManager>().Play("bigCoin");
+            FindObjectOfType<OverlayScript>().AddScore(100);
             rotationSpeed *= 20;
             isCatch = true;
 
