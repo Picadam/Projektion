@@ -33,7 +33,7 @@ public class WalkingEnemyScript : EnemyScript
 
         transform.Translate(velocity.x, 0, velocity.z, Space.World);
 
-        if (Distance(transform.position, endPoint.position) < 0.2)
+        if (Distance(transform.position, startPoint.position) > Distance(startPoint.position, endPoint.position))
         {
             var temp = startPoint;
             startPoint = endPoint;
