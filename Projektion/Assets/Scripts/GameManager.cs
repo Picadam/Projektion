@@ -75,22 +75,19 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void FinishGame()
-    {
-        
-    }
-
     public async void NextLevel()
     {
         int index = SceneManager.GetActiveScene().buildIndex + 1;
-        if (index >= SceneManager.sceneCountInBuildSettings)
-        {
-            FinishGame();
-            return;
-        }
+
 
         FindObjectOfType<AudioManager>().Play("win");
         await Task.Delay(2000);
+
+        if (index >= SceneManager.sceneCountInBuildSettings - 1)
+        {
+            SceneManager.LoadScene(index);
+            return;
+        }
         SceneManager.LoadScene(index);
     }
 
