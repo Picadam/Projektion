@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: MADE TOMMY Medium_PERSONAL USE SDF
+  m_Name: Bleu
   m_EditorClassIdentifier: 
-  hashCode: 1278582855
+  hashCode: 2490462
   material: {fileID: 5155251354045406286}
-  materialHashCode: -51577337
+  materialHashCode: -279640130
   m_Version: 1.1.0
   m_SourceFontFileGUID: 482f6d94b5b5abf4a876e35336856c9f
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 482f6d94b5b5abf4a876e35336856c9f, type: 3}
@@ -2530,7 +2530,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: MADE TOMMY Medium_PERSONAL USE SDF Material
   m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
-  m_ShaderKeywords: BEVEL_ON
+  m_ShaderKeywords: UNDERLAY_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0

@@ -167,7 +167,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &100075791
@@ -283,8 +283,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '  Home'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6eddec63ab7154448be245dd9f0878dc, type: 2}
-  m_sharedMaterial: {fileID: 5155251354045406286, guid: 6eddec63ab7154448be245dd9f0878dc, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0f47cd83fe609f6438b08f55e85daba8, type: 2}
+  m_sharedMaterial: {fileID: 5155251354045406286, guid: 0f47cd83fe609f6438b08f55e85daba8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -614,7 +614,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-105700
+  m_Name: pb_Mesh-37218
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1429,6 +1429,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 779622194}
+    - target: {fileID: 5937898144433760719, guid: 6b0ea0f10da626d43a78bf572802183f, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7944183602395682424, guid: 6b0ea0f10da626d43a78bf572802183f, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 4.09
