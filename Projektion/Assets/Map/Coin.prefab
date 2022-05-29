@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 871646486688869218}
   - component: {fileID: 871646486688869221}
   - component: {fileID: 871646486688869220}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Outer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2846,7 +2846,7 @@ GameObject:
   - component: {fileID: 871646487889318739}
   - component: {fileID: 256275603045333008}
   - component: {fileID: 6182777809478457891}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2910,7 +2910,7 @@ GameObject:
   - component: {fileID: 871646488111557494}
   - component: {fileID: 871646488111557385}
   - component: {fileID: 871646488111557384}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Prism
   m_TagString: Untagged
   m_Icon: {fileID: 0}
