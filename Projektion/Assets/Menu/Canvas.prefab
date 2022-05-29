@@ -68,7 +68,7 @@ MonoBehaviour:
   m_text: Projetktion
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6eddec63ab7154448be245dd9f0878dc, type: 2}
-  m_sharedMaterial: {fileID: -7350760554879839187, guid: 6eddec63ab7154448be245dd9f0878dc, type: 2}
+  m_sharedMaterial: {fileID: 5155251354045406286, guid: 6eddec63ab7154448be245dd9f0878dc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1192,7 +1192,7 @@ MonoBehaviour:
   m_text: '  1 - study'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6eddec63ab7154448be245dd9f0878dc, type: 2}
-  m_sharedMaterial: {fileID: -7350760554879839187, guid: 6eddec63ab7154448be245dd9f0878dc, type: 2}
+  m_sharedMaterial: {fileID: 5155251354045406286, guid: 6eddec63ab7154448be245dd9f0878dc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
